@@ -64,7 +64,7 @@ def index(request):
             
         
     # Fetch all products from the database
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('-id')
 
     # Dashboard data calculations.
     # Total revenue.
@@ -95,3 +95,8 @@ def index(request):
 
     return render(request, 'index.html', context)                  
     
+
+###################################
+## Testing view.
+def testing(request):
+    return render(request, 'testing.html')

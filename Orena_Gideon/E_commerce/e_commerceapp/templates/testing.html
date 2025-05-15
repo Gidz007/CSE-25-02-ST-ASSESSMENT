@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/app.css' %}">
+
+    <style>
+        tr:nth-child(even) {
+            background-color: lightblue;
+        }
+
+        td:nth-child(odd) {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The talbe head  -->
+    <table style="width: 80%;">
+        <thead>
+            <tr>
+                <th> Institution </th>
+                <th> Name </th>
+                <th> Age </th>
+            </tr>
+        </thead>
+
+        <!-- This is the table content  -->
+        <tbody>
+            <tr>
+                <td> Elite High Enteebe road </td>
+                <td> Elvis Okoth </td>
+                <td>
+                    <ul>
+                        <li> An army commanda </li>
+                        <li> Sponsered by the government </li>
+                        <li> He is a business man </li>
+                        <li> 25 </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td> Kololo High </td>
+                <td> Abeka Johsua </td>
+                <td> 25 </td>
+            </tr>
+            <tr>
+                <td> Bishop's Mukono </td>
+                <td> Mukiibi Ssentamu </td>
+                <td> 25 </td>
+            </tr>
+            <tr>
+                <td> Bishop Spreano SS </td>
+                <td> Swabura </td>
+                <td> 28 </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2> Most selling prouducts </h2>
+    <ul style="list-style-type: square">
+        <li> Apples </li>
+        <li> Orange </li>
+        <li> Mangoes </li>
+    </ul>
+
+    <h2> Experied products </h2>
+    <ol type="1">
+        <li> Apple </li>
+        <li> Orange </li>
+        <li> Mangoe </li>
+        <li> Groundnuts </li>
+        <li> Lemon </li>
+        <li> Pineapple </li>
+    </ol>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="">
+                    <div class="m-3">
+                        <h1> Image </h1>
+                        <h3> A hambuger </h3>
+                        <img src="https://i.pinimg.com/736x/4c/a2/ab/4ca2ab463dd539b75ba85c73e7b1508d.jpg"
+                            width="400px">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="https://www.w3schools.com/html/html_table_styling.asp"> Home </a> | <a href="https://github.com/"> Exit
+    </a>
+</body>
+
+</html>

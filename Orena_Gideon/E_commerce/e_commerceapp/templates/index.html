@@ -6,110 +6,129 @@
 
 <div class="container">
     <div class="row">
+
+        <!-- Card colum -->
+        
+        <div class="col-md-6 mt-5">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total revenue</h5>
+                            <p class="card-text">{{ dashboard.total_revenue }} shs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Expected revenue</h5>
+                            <p class="card-text">{{ dashboard.expected_revenue }} shs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3 mt-5">
+                    <div class="card mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-text"> Cpital in stock </h5>
+                        <p class="card-text"> {{ dashboard.capital_in_stock }} shs </p>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="col-md-6 mb-3 mt-5">
+                    <div class="card mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-body"> Out of stock </h5>
+                        <p class="card-text"> {{ dashboard.out_of_stock_count }} </p>
+                    </div>
+                </div>
+                </div>
+                
+            </div>            
+        </div>
+
         <div class="col-md-6">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title"> Total revenue </h5>
-                    <p class="card-text"> {{ dashboard.total_revenue }} shs </p>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title"> Expected revenue </h5>
-                    <p class="card-text"> {{ dashboard.expected_revenue }} shs </p>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-text"> Cpital in stock </h5>
-                    <p class="card-text"> {{ dashboard.capital_in_stock }} shs </p>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-body"> Out of stock </h5>
-                    <p class="card-text"> {{ dashboard.out_of_stock_count }} </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <h1><strong> A product entry from </strong></h1>
+                <h1><strong> A product entry from </strong></h1>
 
-            <!-- Display success or error messages -->
-            {% if success %}
-            <div class="alert alert-success" role="alert">
-                {{ success }}
-            </div>
-            {% endif %}
-            {% if error %}
-            <div class="alert alert-danger" role="alert">
-                {{ error }}
-            </div>
-            {% endif %}
+                <!-- Display success or error messages -->
+                {% if success %}
+                <div class="alert alert-success" role="alert">
+                    {{ success }}
+                </div>
+                {% endif %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
 
-            <!-- Render the form-->
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="name" class="form-lable"> Enter the product name </label>
-                    <input name="name" required type="text" class="form-control" placeholder="Enter the product name">
-                </div>
-                <div class="mb-3">
-                    <label for="category" class="form-lable"> Enter the category</label>
-                    <input name="category" required type="text" class="form-control" placeholder="Enter the catergory">
-                </div>
-                <div class="mb-3">
-                    <label for="price" class="form-lable"> Enter product price </label>
-                    <input name="price" type="number" required class="form-control"
-                        placeholder="Enter the product price">
-                </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-lable"> Enter the quantity </label>
-                    <input name="quantity" type="number" required class="form-control" placeholder="Enter the quantity">
-                </div>
-                <div class="mb-3">
-                    <label for="color" class="form-lable"> Enter the product color </label>
-                    <input name="color" type="text" class="form-control" placeholder="Enter the prudcut color">
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-lable"> Enter the product image </label>
-                    <input name="image" type="file" class="form-control">
-                </div>
-                <div class="d-flex justify-content-between">
-                    <input type="submit" class="btn" value="SAVE">
-                    <button type="submit" name="clear" class="ntb">CLEAR</button>
-                </div>
+                <!-- Render the form-->
+                <form method="POST" enctype="multipart/form-data" class="mt-5">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-lable"> Enter the product name </label>
+                        <input name="name" required type="text" class="form-control"
+                            placeholder="Enter the product name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-lable"> Enter the category</label>
+                        <input name="category" required type="text" class="form-control"
+                            placeholder="Enter the catergory">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-lable"> Enter product price </label>
+                        <input name="price" type="number" required class="form-control"
+                            placeholder="Enter the product price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-lable"> Enter the quantity </label>
+                        <input name="quantity" type="number" required class="form-control"
+                            placeholder="Enter the quantity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-lable"> Enter the product color </label>
+                        <input name="color" type="text" class="form-control" placeholder="Enter the prudcut color">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-lable"> Enter the product image </label>
+                        <input name="image" type="file" class="form-control">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <input type="submit" class="btn" value="SAVE">
+                        <button type="submit" name="clear" class="ntb" value="CLEAR">CLEAR</button>
+                    </div>
 
-            </form>
-        </div>
+                </form>
+            </div>
+
+        <!-- The produc display form -->
+        <h1 class="mt-3"><strong> Table to display products recorded </strong></h1>
+        <table class="table table-hover mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in all_products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
     </div>
 
-    <!-- The produc display form -->
-    <h1><strong> Table to display products recorded </strong></h1>
-    <table class="table table-hover">
-        <thead class="table-dark">
-            <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Quantity</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in all_products %}
-            <tr>
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.price }}</td>
-                <td>{{ product.quantity }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-</div>
 
 
 
-
-{% endblock %}
+    {% endblock %}

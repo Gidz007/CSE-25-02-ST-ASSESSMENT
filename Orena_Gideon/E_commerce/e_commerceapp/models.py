@@ -4,12 +4,12 @@ from django.db import models
 
 # Model for an E-commerce application.
 class Product(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
-    category = models.CharField(max_length=255, null=True, blank=True)
-    price = models.IntegerField(null=True, blank=True)
-    quantity = models.IntegerField(null=True, blank=True)
-    color = models.CharField(max_length=255, null=True, blank=True)
-    image = models.ImageField(upload_to='static/media/', null=True, blank=True)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    category = models.CharField(max_length=255, null=False, blank=False)
+    price = models.IntegerField(null=False, blank=False)
+    quantity = models.IntegerField(null=False, blank=False)
+    color = models.CharField(max_length=255, null=False, blank=False)
+    image = models.ImageField(upload_to='static/media/', null=False, blank=False)
 
 
     # Calling the model by its name.
