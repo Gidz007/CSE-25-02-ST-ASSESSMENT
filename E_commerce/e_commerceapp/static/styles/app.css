@@ -1,0 +1,106 @@
+.btn {
+    background-color: #f97316; /* css for the save btn, with a lighter orange */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;    
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e65c00; /* Darker orange on hover */
+}
+
+.ntb {
+    background-color: #f3f4f6; /* css for the clear btn, with a softer grey */
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.ntb:hover {
+    background-color: #d1d5db; /* Darker grey on hover */
+}
+
+.dashboard-container {
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: 0.3s ease-in-out;    
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Darker shadow on hover */ 
+}
+
+.dashboard {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    padding: 32px 24px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.dashboard-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111
+}
+
+.metric-label {
+    color: #888;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.text-success {
+    color: #1bc47d !important;
+}
+
+.text-danger {
+    color: #e74c3c !important;
+}
+
+/* Button row already defined */
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.button-row .btn,
+.button-row .ntb {
+    width: 50%;
+}
+
+table.table-hover tbody tr:hover {
+    background-color: #f9fafb        
+} 
+
+table th {
+    background-color: #1f2937; /* Dark gray */
+    color: white; 
+}
+
