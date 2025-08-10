@@ -1,11 +1,19 @@
+"""
+Views for the e_commerceapp module.
+contains product management,and user_related operations.
+"""
+
 from django.shortcuts import render, redirect
 from e_commerceapp.models import Product
 
 # Create your views here.
 
 
-# A view for handling the e-commerce application.
 def index(request):
+    """
+    A view handling product entry, display and calculations.
+    A form for entry, a table for dispaly and cards for calcualated outputs.
+    """
 
     # Initialise the error and the success box.
     error = None
