@@ -1,21 +1,32 @@
 .btn {
-    background-color: orange; /* css for the save btn */
+    background-color: #f97316; /* css for the save btn, with a lighter orange */
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;    
+    padding: 12px 24px;
+    border-radius: 8px;    
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e65c00; /* Darker orange on hover */
 }
 
 .ntb {
-    background-color: gray; /* css for the clear btn */
-    color: black;
+    background-color: #f3f4f6; /* css for the clear btn, with a softer grey */
+    color: #333;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.ntb:hover {
+    background-color: #d1d5db; /* Darker grey on hover */
 }
 
 .dashboard-container {
@@ -24,19 +35,24 @@
 
 .dashboard-card {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    padding: 32px 24px;
-    margin-bottom: 16px;    
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: 0.3s ease-in-out;    
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Darker shadow on hover */ 
 }
 
 .dashboard {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     padding: 32px 24px;
     margin-bottom: 16px;
-    width: 200%;
+    width: 100%;
 }
 
 .dashboard-metric {
@@ -50,6 +66,7 @@
 .metric-value {
     font-size: 2rem;
     font-weight: bold;
+    color: #111
 }
 
 .metric-label {
@@ -76,5 +93,14 @@
 .button-row .btn,
 .button-row .ntb {
     width: 50%;
+}
+
+table.table-hover tbody tr:hover {
+    background-color: #f9fafb        
+} 
+
+table th {
+    background-color: #1f2937; /* Dark gray */
+    color: white; 
 }
 
