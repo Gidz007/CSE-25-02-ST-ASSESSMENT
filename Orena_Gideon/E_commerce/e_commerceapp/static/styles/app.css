@@ -1,9 +1,10 @@
 .btn {
-    background-color: #f97316; /* css for the save btn, with a lighter orange */
+    background-color: #f97316;
+    /* css for the save btn, with a lighter orange */
     color: white;
     border: none;
     padding: 12px 24px;
-    border-radius: 8px;    
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -11,11 +12,13 @@
 }
 
 .btn:hover {
-    background-color: #e65c00; /* Darker orange on hover */
+    background-color: #e65c00;
+    /* Darker orange on hover */
 }
 
 .ntb {
-    background-color: #f3f4f6; /* css for the clear btn, with a softer grey */
+    background-color: #f3f4f6;
+    /* css for the clear btn, with a softer grey */
     color: #333;
     border: none;
     padding: 12px 24px;
@@ -26,7 +29,8 @@
 }
 
 .ntb:hover {
-    background-color: #d1d5db; /* Darker grey on hover */
+    background-color: #d1d5db;
+    /* Darker grey on hover */
 }
 
 .dashboard-container {
@@ -36,20 +40,21 @@
 .dashboard-card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     padding: 24px;
     margin-bottom: 16px;
-    transition: 0.3s ease-in-out;    
+    transition: 0.3s ease-in-out;
 }
 
 .dashboard-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Darker shadow on hover */ 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* Darker shadow on hover */
 }
 
 .dashboard {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     padding: 32px 24px;
     margin-bottom: 16px;
     width: 100%;
@@ -96,11 +101,44 @@
 }
 
 table.table-hover tbody tr:hover {
-    background-color: #f9fafb        
-} 
-
-table th {
-    background-color: #1f2937; /* Dark gray */
-    color: white; 
+    background-color: #f9fafb
 }
 
+table th {
+    background-color: #1f2937;
+    /* Dark gray */
+    color: white;
+    text-align: center;
+    /* Center header text */
+}
+
+table td {
+    text-align: center;
+    /* Center all cell content */
+    vertical-align: middle;
+    /* Vertically center content */
+}
+
+/* Actions column specific alignment */
+table th:last-child {
+    text-align: center;
+    /* Center the 'Action' header */
+}
+
+table td:last-child {
+    text-align: center;
+    /* Center actions */
+}
+
+/* Form validation error styles */
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}

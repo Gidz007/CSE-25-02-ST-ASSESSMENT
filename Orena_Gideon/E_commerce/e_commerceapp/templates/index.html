@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-6">
                     <div class="dashboard-card text-center">
-                        <div class="metric-value text-danger">{{ dashboard.out_of_stock_count }}</div>
+                        <div class="metric-value text-danger">5</div>
                         <div class="metric-label"> Products out of stock </div>
                     </div>
                 </div>
@@ -60,20 +60,50 @@
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <input name="name" required type="text" class="form-control" placeholder="Product Name">
+                            <input name="name" type="text"
+                                class="form-control {% if field_errors.name %}is-invalid{% endif %}"
+                                placeholder="Product Name"
+                                value="{% if request.POST.name %}{{ request.POST.name }}{% endif %}">
+                            {% if field_errors.name %}
+                            <div class="invalid-feedback">{{ field_errors.name }}</div>
+                            {% endif %}
                         </div>
                         <div class="mb-3">
-                            <input name="category" required type="text" class="form-control" placeholder="Category">
+                            <input name="category" type="text"
+                                class="form-control {% if field_errors.category %}is-invalid{% endif %}"
+                                placeholder="Category"
+                                value="{% if request.POST.category %}{{ request.POST.category }}{% endif %}">
+                            {% if field_errors.category %}
+                            <div class="invalid-feedback">{{ field_errors.category }}</div>
+                            {% endif %}
                         </div>
                         <div class="mb-3">
-                            <input name="price" type="number" required class="form-control" placeholder="Price">
+                            <input name="price" type="number"
+                                class="form-control {% if field_errors.price %}is-invalid{% endif %}"
+                                placeholder="Price"
+                                value="{% if request.POST.price %}{{ request.POST.price }}{% endif %}">
+                            {% if field_errors.price %}
+                            <div class="invalid-feedback">{{ field_errors.price }}</div>
+                            {% endif %}
                         </div>
                         <div class="mb-3">
-                            <input name="quantity" type="number" required class="form-control" placeholder="Quantity">
+                            <input name="quantity" type="number"
+                                class="form-control {% if field_errors.quantity %}is-invalid{% endif %}"
+                                placeholder="Quantity"
+                                value="{% if request.POST.quantity %}{{ request.POST.quantity }}{% endif %}">
+                            {% if field_errors.quantity %}
+                            <div class="invalid-feedback">{{ field_errors.quantity }}</div>
+                            {% endif %}
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <input name="color" type="text" class="form-control" placeholder="Color">
+                                <input name="color" type="text"
+                                    class="form-control {% if field_errors.color %}is-invalid{% endif %}"
+                                    placeholder="Color"
+                                    value="{% if request.POST.color %}{{ request.POST.color }}{% endif %}">
+                                {% if field_errors.color %}
+                                <div class="invalid-feedback">{{ field_errors.color }}</div>
+                                {% endif %}
                             </div>
                             <div class="col-md-6">
                                 <input name="image" type="file" class="form-control" placeholder="Upload Image">
@@ -100,7 +130,7 @@
                 <th> Category </th>
                 <th> Price shs</th>
                 <th> Quantity </th>
-                <th> Actions </th>
+                <th> Action </th>
             </tr>
         </thead>
         <tbody>
@@ -112,16 +142,16 @@
                 <td> {{ product.price }} </td>
                 <td> {{ product.quantity }} </td>
                 <td>
-                    <div class="d-flex gap-2 align-items-center justify-content-end">
+                    <div class="d-flex gap-2 align-items-center justify-content-center">
                         <!-- Edit button -->
-                        <a href="/edit-product/{{ product.id }}"
+                        <a href="/edit-product/{{ product.id }}/"
                             class="btn btn-sm btn-primary d-flex align-items-center justify-content-center"
                             title="Edit product" style="width: 32px; height: 32px;">
                             <i class="bi bi-pencil"></i>
                         </a>
 
                         <!-- Delete button -->
-                        <form method="POST" action="/delete-product/{{ product.id }}" style="display: inline;">
+                        <form method="POST" action="/delete-product/{{ product.id }}/" style="display: inline;">
                             {% csrf_token %}
                             <button type="submit"
                                 class="btn btn-sm btn-danger d-flex align-items-center justify-content-center"

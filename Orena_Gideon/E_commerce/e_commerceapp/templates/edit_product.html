@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Product {% endblock %}
+
+{% block content %}
+
+<div class="container dashboard-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="dashboard">
+                <h1 class="mb-4"><strong> Edit Product </strong></h1>
+                
+                <!-- Display error messages -->
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Product Name</label>
+                        <input name="name" type="text" class="form-control" id="name" value="{{ product.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <input name="category" type="text" class="form-control" id="category" value="{{ product.category }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="price" type="number" class="form-control" id="price" value="{{ product.price }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input name="quantity" type="number" class="form-control" id="quantity" value="{{ product.quantity }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-label">Color</label>
+                        <input name="color" type="text" class="form-control" id="color" value="{{ product.color }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Product Image</label>
+                        <input name="image" type="file" class="form-control" id="image">
+                        <small class="text-muted">Leave empty to keep current image</small>
+                        {% if product.image %}
+                            <div class="mt-2">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 100px;">
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="button-row">
+                        <button type="submit" class="btn btn-lg">UPDATE</button>
+                        <a href="/" class="ntb btn btn-lg" style="text-decoration: none; display: inline-block; text-align: center;">CANCEL</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

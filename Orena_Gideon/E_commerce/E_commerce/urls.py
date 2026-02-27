@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from e_commerceapp.views import index, testing
+from e_commerceapp.views import index, testing, delete_product, edit_product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name= 'index'), 
+    path('edit-product/<int:product_id>/', edit_product, name='edit_product'),
+    path('delete-product/<int:product_id>/', delete_product, name='delete_product'),
     path('test', testing)
 ]
