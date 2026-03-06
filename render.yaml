@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: e-commerce-platform-un2e
+    env: python
+    plan: free
+    buildCommand: "cd Orena_Gideon/E_commerce && pip install -r ../../requirements.txt"
+    startCommand: "cd Orena_Gideon/E_commerce && python manage.py runserver 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: DJANGO_SETTINGS_MODULE
+        value: E_commerce.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+    autoDeploy: true

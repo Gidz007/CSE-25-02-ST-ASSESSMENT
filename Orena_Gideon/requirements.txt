@@ -5,6 +5,7 @@ dill==0.4.0
 distlib==0.4.0
 Django==5.2.4
 filelock==3.18.0
+gunicorn==25.1.0
 iniconfig==2.1.0
 isort==6.0.1
 mccabe==0.7.0
@@ -20,3 +21,4 @@ sqlparse==0.5.3
 tomlkit==0.13.3
 tzdata==2025.2
 virtualenv==20.31.2
+whitenoise==6.12.0

@@ -1,0 +1,1 @@
+web: cd E_commerce && gunicorn E_commerce.wsgi:application --bind 0.0.0.0:$PORT
